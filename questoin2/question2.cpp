@@ -12,6 +12,10 @@ int main(){
         cout<<"Memory allocation failed!"<<endl;
         return 1;
     }else{
+        if(dimetion2>3||dimetion1>3){
+            cout<<"Dimetions should not be greater than 3!"<<endl;
+            return 1;
+        }else{      
         for(int i=0; i<dimetion1; i++) {
             dynamicArray2D[i] = new int[dimetion2];
             if(dynamicArray2D[i] == nullptr) {
@@ -31,6 +35,10 @@ int main(){
             }
             cout<<endl;
         }
+        for(int i=0; i<dimetion1; i++) {
+            delete [] dynamicArray2D[i];
+        }
+    }
         delete [] dynamicArray2D;
     }
     return 0;
